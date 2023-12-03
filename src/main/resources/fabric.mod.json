@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "asterium",
+  "version": "${version}",
+  "name": "Asterium",
+  "description": "A Minecraft mod which provides a lot of useful functions for Fabric.",
+  "authors": [
+    "yuko1101"
+  ],
+  "contact": {
+    "website": "https://github.com/Asterity/AsteriumMod#readme",
+    "repo": "https://github.com/Asterity/AsteriumMod"
+  },
+  "license": "MIT",
+  "icon": "assets/asterium/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "io.github.asterity.asterium.client.AsteriumClient"
+    ],
+    "main": [
+      "io.github.asterity.asterium.Asterium"
+    ]
+  },
+  "mixins": [
+    "asterium.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
