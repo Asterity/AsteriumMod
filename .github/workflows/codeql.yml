@@ -17,7 +17,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '30 19 * * 0'
+    - cron: '15 3 * * 5'
 
 jobs:
   analyze:
@@ -59,6 +59,12 @@ jobs:
         # For more details on CodeQL's query packs, refer to: https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning#using-queries-in-ql-packs
         # queries: security-extended,security-and-quality
 
+    # Setup JDK 17 for Fabric.
+    - name: Setup JDK 17
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'corretto' # See 'Supported distributions' for available options
+        java-version: '17'
 
     # Autobuild attempts to build any compiled languages (C/C++, C#, Go, Java, or Swift).
     # If this step fails, then you should remove it and run the build manually (see below)
